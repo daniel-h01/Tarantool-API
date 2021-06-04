@@ -1,0 +1,16 @@
+box.cfg{listen = 3301}
+s = box.schema.space.create('tester')
+s:format({
+         {name = 'id', type = 'unsigned'},
+         {name = 'key', type = 'string'},
+         {name = 'value', type = 'string'}
+         })
+s:create_index('primary', {
+         type = 'hash',
+         parts = {'id'}
+         })
+s:create_index('secondary', {
+         type = 'hash',
+         parts = {'key'}
+         })
+box.schema.user.passwd('pass')
