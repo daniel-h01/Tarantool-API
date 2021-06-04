@@ -1,7 +1,7 @@
 ## Запуск
 ```
 tarantool ./api/db.txt
-pip install -r requiroments.txt
+pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
